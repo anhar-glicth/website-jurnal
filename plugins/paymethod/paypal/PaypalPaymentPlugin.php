@@ -27,7 +27,11 @@ use PKP\db\DAORegistry;
 use PKP\plugins\Hook;
 use PKP\plugins\PaymethodPlugin;
 
-require_once(dirname(__FILE__) . '/vendor/autoload.php');
+// Load dependencies
+$paypalVendor = __DIR__ . '/vendor/autoload.php';
+if (file_exists($paypalVendor)) {
+    require_once($paypalVendor);
+}
 
 class PaypalPaymentPlugin extends PaymethodPlugin
 {
