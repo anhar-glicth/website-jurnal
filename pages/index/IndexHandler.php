@@ -68,7 +68,7 @@ class IndexHandler extends PKPIndexHandler
 
         if ($journal) {
             $activeTheme = $templateMgr->getTemplateVars('activeTheme');
-            $journalContentOptions = $activeTheme->getOption('journalContentOrganization');
+            $journalContentOptions = $activeTheme ? $activeTheme->getOption('journalContentOrganization') : null;
             if (!is_array($journalContentOptions)) {
                 $journalContentOptions = JournalContentOption::default($journal);
             }
@@ -84,7 +84,7 @@ class IndexHandler extends PKPIndexHandler
 
             if (in_array(JournalContentOption::RECENT_PUBLISHED->value, $journalContentOptions)) {
                 $rangeInfo = $this->getRangeInfo($request, 'publishedPublications');
-                $itemsPerPage = $journal->getData('itemsPerPage');
+                $itemsPerPage = $journal->getData('itemsPerPage') ?: 10;
 
                 $collector = Repo::submission()
                     ->getCollector()
