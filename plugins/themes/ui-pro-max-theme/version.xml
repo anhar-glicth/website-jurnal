@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/version.dtd">
+<version>
+	<application>ojs</application>
+	<type>plugins.themes</type>
+	<role>ui-pro-max-theme</role>
+	<release>1.0.0.0</release>
+	<date>2024-05-07</date>
+	<lazy-load>0</lazy-load>
+	<class>APP\plugins\themes\uiProMax\UiProMaxThemePlugin</class>
+</version>
