@@ -23,7 +23,9 @@ use APP\submission\Submission;
 use PKP\config\Config;
 use PKP\context\Context;
 use PKP\db\DAORegistry;
+use PKP\core\PKPApplication;
 use PKP\plugins\Hook;
+use PKP\submission\PKPSubmission;
 
 class ArticleTombstoneManager
 {
@@ -44,7 +46,7 @@ class ArticleTombstoneManager
         $oaiIdentifier = 'oai:' . Config::getVar('oai', 'repository_id') . ':' . 'article/' . $article->getId();
         $OAISetObjectsIds = [
             Application::ASSOC_TYPE_JOURNAL => $journal->getId(),
-            Application::ASSOC_TYPE_SECTION => $section->getId(),
+            PKPApplication::ASSOC_TYPE_SECTION => $section->getId(),
         ];
 
         $articleTombstone = $tombstoneDao->newDataObject();
@@ -69,7 +71,7 @@ class ArticleTombstoneManager
         $submissions = Repo::submission()
             ->getCollector()
             ->filterByContextIds([$context->getId()])
-            ->filterByStatus([Submission::STATUS_PUBLISHED])
+            ->filterByStatus([PKPSubmission::STATUS_PUBLISHED])
             ->getMany();
 
         foreach ($submissions as $submission) {
@@ -86,7 +88,7 @@ class ArticleTombstoneManager
         $tombstoneDao = DAORegistry::getDAO('DataObjectTombstoneDAO'); /** @var \PKP\tombstone\DataObjectTombstoneDAO $tombstoneDao */
         $submissions = Repo::submission()->getCollector()
             ->filterByContextIds([$contextId])
-            ->filterByStatus([Submission::STATUS_PUBLISHED])
+            ->filterByStatus([PKPSubmission::STATUS_PUBLISHED])
             ->getMany();
 
         foreach ($submissions as $submission) {
