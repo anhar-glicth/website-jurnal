@@ -69,18 +69,46 @@
 	</div>
 	{* ===== END STEPPER ===== *}
 
-	<div class="cmp_notification">
+	<div class="pm_submission_actions_wrapper pm_reveal">
 		{if $sections|@count == 0 || $currentContext->getData('disableSubmissions')}
-			{translate key="author.submit.notAccepting"}
+			<div class="pm_alert_warning">
+				{translate key="author.submit.notAccepting"}
+			</div>
 		{else}
 			{if $isUserLoggedIn}
-				{capture assign="newSubmission"}<a href="{url page="submission"}">{translate key="about.onlineSubmissions.newSubmission"}</a>{/capture}
-				{capture assign="viewSubmissions"}<a href="{url page="submissions"}">{translate key="about.onlineSubmissions.viewSubmissions"}</a>{/capture}
-				{translate key="about.onlineSubmissions.submissionActions" newSubmission=$newSubmission viewSubmissions=$viewSubmissions}
+				<div class="pm_submission_btn_group">
+					<a href="{url page="submission"}" class="pm_btn pm_btn_submit_new">
+						<span class="pm_btn_icon">📤</span>
+						<div class="pm_btn_text">
+							<strong>Kirim Naskah Baru</strong>
+							<span>Mulai proses pengiriman artikel ilmiah Anda</span>
+						</div>
+					</a>
+					<a href="{url page="submissions"}" class="pm_btn pm_btn_view_existing">
+						<span class="pm_btn_icon">📋</span>
+						<div class="pm_btn_text">
+							<strong>Cek Status Naskah</strong>
+							<span>Lihat riwayat dan perkembangan artikel Anda</span>
+						</div>
+					</a>
+				</div>
 			{else}
-				{capture assign="login"}<a href="{url page="login"}">{translate key="about.onlineSubmissions.login"}</a>{/capture}
-				{capture assign="register"}<a href="{url page="user" op="register"}">{translate key="about.onlineSubmissions.register"}</a>{/capture}
-				{translate key="about.onlineSubmissions.registrationRequired" login=$login register=$register}
+				<div class="pm_submission_btn_group">
+					<a href="{url page="login"}" class="pm_btn pm_btn_submit_new pm_trigger_modal">
+						<span class="pm_btn_icon">🔑</span>
+						<div class="pm_btn_text">
+							<strong>Login Penulis</strong>
+							<span>Masuk untuk mengirimkan naskah baru</span>
+						</div>
+					</a>
+					<a href="{url page="user" op="register"}" class="pm_btn pm_btn_view_existing pm_trigger_modal">
+						<span class="pm_btn_icon">📝</span>
+						<div class="pm_btn_text">
+							<strong>Daftar Akun Baru</strong>
+							<span>Registrasi untuk mendapatkan akses penulis</span>
+						</div>
+					</a>
+				</div>
 			{/if}
 		{/if}
 	</div>

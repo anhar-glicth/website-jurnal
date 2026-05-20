@@ -1359,7 +1359,104 @@ input:focus, textarea:focus, select:focus {
     .pm_stats_section { grid-template-columns: 1fr; }
 }
 
+/* ============ 22. SUBMISSION ACTIONS ============ */
+.pm_submission_actions_wrapper {
+    margin: 2.5rem 0;
+}
+
+.pm_submission_btn_group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.pm_submission_btn_group .pm_btn {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--pm-radius-lg);
+    text-decoration: none !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.pm_btn_submit_new {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(79, 70, 229, 0.03) 100%);
+}
+
+.pm_btn_submit_new:hover {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -5px rgba(99, 102, 241, 0.3);
+}
+
+.pm_btn_view_existing {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(219, 39, 119, 0.03) 100%);
+    border-color: rgba(236, 72, 153, 0.1) !important;
+}
+
+.pm_btn_view_existing:hover {
+    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    border-color: transparent !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px -5px rgba(236, 72, 153, 0.3);
+}
+
+.pm_btn_icon {
+    font-size: 1.75rem;
+    background: var(--pm-card);
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--pm-shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.pm_btn:hover .pm_btn_icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.pm_btn_text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.pm_btn_text strong {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    color: var(--pm-text);
+    transition: color 0.3s ease;
+}
+
+.pm_btn_text span {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.15rem;
+    transition: color 0.3s ease;
+}
+
+.pm_btn:hover .pm_btn_text strong,
+.pm_btn:hover .pm_btn_text span {
+    color: #ffffff;
+}
+
+.pm_alert_warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    padding: 1rem 1.5rem;
+    border-radius: var(--pm-radius-md);
+    border-left: 4px solid #f59e0b;
+}
+
 /* ============ 23. PRINT STYLES ============ */
+
 @media print {
     .premium_header_bar,
     .pm_wa_widget,
