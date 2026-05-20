@@ -1,79 +1,137 @@
-# 🔬 Website Jurnal (Open Journal Systems)
+# Website Jurnal (Open Journal Systems)
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Status-Development-blue?style=for-the-badge" alt="Status">
-  <img src="https://img.shields.io/badge/UI%2FUX-Pro%20Max-indigo?style=for-the-badge" alt="UI/UX Pro Max">
-  <img src="https://img.shields.io/badge/Powered%20By-OJS%203.4-orange?style=for-the-badge" alt="OJS">
-</div>
-
----
-
-## 🌟 Overview
-Platform publikasi jurnal ilmiah modern yang dibangun di atas basis **Open Journal Systems (OJS)** dengan kustomisasi tampilan premium. Proyek ini dirancang untuk memberikan pengalaman membaca dan manajemen jurnal yang elegan, responsif, dan profesional.
+Platform publikasi jurnal ilmiah berbasis **Open Journal Systems 3.6** dengan tema kustom **UI/UX Pro Max** (glassmorphism, tipografi Inter & Outfit).
 
 > **Project Owner:** Muhammad Anhar Solihin
 
 ---
 
-## ✨ Key Features
-- 💎 **UI/UX Pro Max Theme**: Desain kustom dengan estetika *Glassmorphism* dan tipografi modern.
-- 📱 **Fully Responsive**: Tampilan optimal di berbagai perangkat (Desktop, Tablet, Mobile).
-- 🚀 **Smooth Animations**: Interaksi antarmuka yang dinamis dan elegan.
-- 🛠️ **Advanced Management**: Fitur lengkap OJS untuk editorial, peer-review, dan pengarsipan.
-- 🔒 **Secure Configuration**: Pengaturan sistem yang sudah dioptimalkan untuk keamanan lokal dan produksi.
+## Persyaratan
+
+| Komponen | Versi |
+|----------|--------|
+| PHP | 8.2+ |
+| MySQL / MariaDB | 5.7+ / 10.x |
+| Apache | 2.4 (XAMPP) |
+| OJS | 3.6.0 |
 
 ---
 
-## 🚀 Installation Guide
+## Instalasi cepat (XAMPP)
 
-Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal Anda:
+### 1. Clone & submodule
 
-### 1. Clone & Dependencies
 ```bash
 git clone https://github.com/anhar-glicth/website-jurnal.git
 cd website-jurnal
 git submodule update --init --recursive
 ```
 
-### 2. Database Setup
-1. Pastikan **MySQL** dan **Apache** di XAMPP sudah menyala.
-2. Buat database baru melalui phpMyAdmin dengan nama: `oai_jurnal`.
+### 2. Database
+
+1. Start **Apache** dan **MySQL** di XAMPP Control Panel.
+2. Buat database `oai_jurnal` di phpMyAdmin.
+3. Import backup SQL jika ada, atau jalankan wizard instalasi OJS.
 
 ### 3. Konfigurasi
-File `config.inc.php` sudah disiapkan. Pastikan pengaturan database di dalamnya sesuai dengan kredensial XAMPP Anda.
 
-### 4. Menjalankan Sistem
-Akses melalui browser:
-```text
-http://localhost/ojs
+```bash
+copy config.TEMPLATE.inc.php config.inc.php
 ```
-Ikuti wizard instalasi jika diperlukan, dan gunakan database `oai_jurnal` yang sudah dibuat.
+
+Sesuaikan `[database]` di `config.inc.php` (default XAMPP: user `root`, password kosong).
+
+### 4. Pengaturan jurnal (opsional, sudah disertakan skrip)
+
+```bash
+c:\xampp\mysql\bin\mysql.exe -u root oai_jurnal < dbscripts\setup\journal_paradaya_settings.sql
+```
+
+Skrip ini mengaktifkan tema **uiProMax**, melengkapi metadata **Jurnal Paradaya**, dan placeholder plugin Crossref/Analytics.
+
+### 5. Jalankan
+
+Buka: **http://localhost/ojs**
+
+Login admin: gunakan akun yang dibuat saat instalasi.
 
 ---
 
-## 🎨 Design System
-Proyek ini menggunakan standar desain **UI/UX Pro Max** dengan spesifikasi:
-- **Primary Color:** Indigo (`#6366f1`)
-- **Accent Color:** Violet (`#8b5cf6`)
-- **Typography:** *Outfit* (Headings) & *Inter* (Body Text)
-- **Concept:** Modern Glassmorphism & High Contrast
+## Akun Default untuk Setiap Peran (Roles)
+
+Berikut adalah daftar akun default yang dapat digunakan untuk menguji fungsionalitas OJS sesuai masing-masing peran (roles). Semua akun menggunakan password: **`Pradaya2026!`**
+
+| Peran (Role) | Username | Email | Deskripsi Akses |
+|---|---|---|---|
+| **Site Administrator** | `im_anhars` | *ditentukan saat install* | Akses penuh seluruh instalasi sistem OJS |
+| **Journal Manager** | `manager_pradaya` | `manager@pradaya.com` | Pengaturan tampilan & operasional jurnal |
+| **Section Editor** | `editor_pradaya` | `editor@pradaya.com` | Pengelolaan naskah & penugasan reviewer |
+| **Reviewer** | `reviewer_pradaya` | `reviewer@pradaya.com` | Penilaian kelayakan naskah (Mitra Bestari) |
+| **Author** | `author_pradaya` | `author@pradaya.com` | Pengiriman naskah baru & revisi penulis |
+| **Reader** | `reader_pradaya` | `reader@pradaya.com` | Pembaca umum & langganan notifikasi |
+
+> [!WARNING]
+> Demi keamanan, harap segera mengubah password akun-akun ini ketika dideploy di server produksi / hosting online.
 
 ---
 
-## 🛠️ Technology Stack
-- **Core Engine:** PHP 8.x
-- **Framework:** Open Journal Systems (PKP)
-- **Styling:** Vanilla CSS3 with Glassmorphism
-- **Animations:** CSS Transitions & Keyframes
-- **Database:** MySQL / MariaDB
+## Tema UI/UX Pro Max
+
+| Item | Lokasi |
+|------|--------|
+| Tema | `plugins/themes/uiProMax/` |
+| CSS premium | `plugins/generic/premiumCss/styles/premium.css` |
+| Aktivasi | Settings → Website → Appearance → Theme → **UI/UX Pro Max** |
+
+Template header premium ada di tema (bukan di core PKP), sehingga upgrade OJS lebih aman.
 
 ---
 
-## 👨‍💻 Credits
-Developed with ❤️ by **Muhammad Anhar Solihin**
+## Email
+
+Development: email dicatat ke log (`default = log`).
+
+Production: ikuti panduan [docs/SETUP-SMTP.md](docs/SETUP-SMTP.md).
 
 ---
 
-<div align="center">
-  <p>&copy; 2024 Muhammad Anhar Solihin. All rights reserved.</p>
-</div>
+## Integrasi (isi kredensial di admin)
+
+| Plugin | Menu admin |
+|--------|------------|
+| Crossref (DOI) | Settings → Distribution → DOI → Crossref |
+| Google Analytics | Settings → Website → Plugins → Google Analytics |
+| Google Scholar | Otomatis jika metadata jurnal lengkap |
+
+---
+
+## Keamanan
+
+- `config.inc.php` **tidak** di-commit (ada di `.gitignore`).
+- Setelah deploy: ganti `salt`, `api_key_secret`, `base_url`, dan `allowed_hosts`.
+- Gunakan HTTPS di production (`force_ssl = On`).
+
+---
+
+## Struktur kustom
+
+```
+plugins/themes/uiProMax/     # Tema aktif
+plugins/generic/premiumCss/  # Stylesheet premium
+dbscripts/setup/             # SQL pengaturan jurnal
+docs/SETUP-SMTP.md           # Panduan email
+```
+
+---
+
+## Troubleshooting
+
+| Masalah | Solusi |
+|---------|--------|
+| Tampilan lama | Clear cache: hapus isi `cache/t_compile/` dan `cache/opcache/` |
+| Tema tidak muncul | Pastikan `themePluginPath = uiProMax` di journal settings |
+| Email tidak terkirim | Ubah `default` ke `smtp` — lihat SETUP-SMTP.md |
+
+---
+
+Developed by **Muhammad Anhar Solihin**
