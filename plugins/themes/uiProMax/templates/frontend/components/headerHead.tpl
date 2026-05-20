@@ -8,7 +8,7 @@
 	<meta charset="{$defaultCharset|escape}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="{if $currentContext}{$currentContext->getLocalizedData('description')|strip_tags|truncate:160}{else}Jurnal Pradaya — Platform publikasi jurnal ilmiah modern{/if}">
-	<meta name="theme-color" content="#6366f1">
+	<meta name="theme-color" content="#1e6292">
 	<title>
 		{$pageTitleTranslated|strip_tags}
 		{if $requestedPage|escape|default:"index" != 'index' && $currentContext && $currentContext->getLocalizedName()}

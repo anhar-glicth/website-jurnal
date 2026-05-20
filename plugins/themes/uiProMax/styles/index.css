@@ -6,11 +6,11 @@
 
 /* ============ 1. DESIGN TOKENS (Light Mode) ============ */
 :root {
-    --pm-primary:        #6366f1;
-    --pm-primary-dark:   #4f46e5;
-    --pm-primary-light:  #818cf8;
-    --pm-secondary:      #ec4899;
-    --pm-accent:         #8b5cf6;
+    --pm-primary:        #1e6292;
+    --pm-primary-dark:   #15476a;
+    --pm-primary-light:  #2d80bc;
+    --pm-secondary:      #0ea5e9;
+    --pm-accent:         #0284c7;
     --pm-success:        #10b981;
     --pm-warning:        #f59e0b;
     --pm-danger:         #ef4444;
@@ -19,8 +19,8 @@
     --pm-bg-alt:         #f1f5f9;
     --pm-card:           rgba(255,255,255,0.85);
     --pm-card-solid:     #ffffff;
-    --pm-border:         rgba(99,102,241,0.12);
-    --pm-border-light:   rgba(99,102,241,0.06);
+    --pm-border:         rgba(30,98,146,0.12);
+    --pm-border-light:   rgba(30,98,146,0.06);
 
     --pm-text:           #1e293b;
     --pm-text-secondary: #475569;
@@ -32,10 +32,10 @@
     --pm-radius-lg:      20px;
     --pm-radius-xl:      28px;
 
-    --pm-shadow:         0 4px 24px -2px rgba(99,102,241,0.10);
-    --pm-shadow-hover:   0 12px 40px -8px rgba(99,102,241,0.20);
-    --pm-shadow-card:    0 10px 30px -10px rgba(99,102,241,0.08), 0 4px 12px -4px rgba(99,102,241,0.03);
-    --pm-shadow-button:  0 4px 14px rgba(99,102,241,0.30);
+    --pm-shadow:         0 4px 24px -2px rgba(30,98,146,0.10);
+    --pm-shadow-hover:   0 12px 40px -8px rgba(30,98,146,0.20);
+    --pm-shadow-card:    0 10px 30px -10px rgba(30,98,146,0.08), 0 4px 12px -4px rgba(30,98,146,0.03);
+    --pm-shadow-button:  0 4px 14px rgba(30,98,146,0.30);
 
     --pm-transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --pm-transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -51,8 +51,8 @@
     --pm-bg-alt:         #1e293b;
     --pm-card:           rgba(30,41,59,0.85);
     --pm-card-solid:     #1e293b;
-    --pm-border:         rgba(99,102,241,0.20);
-    --pm-border-light:   rgba(99,102,241,0.10);
+    --pm-border:         rgba(30,98,146,0.20);
+    --pm-border-light:   rgba(30,98,146,0.10);
 
     --pm-text:           #e2e8f0;
     --pm-text-secondary: #94a3b8;
@@ -60,7 +60,7 @@
     --pm-text-inverse:   #1e293b;
 
     --pm-shadow:         0 4px 24px -2px rgba(0,0,0,0.30);
-    --pm-shadow-hover:   0 12px 40px -8px rgba(99,102,241,0.30);
+    --pm-shadow-hover:   0 12px 40px -8px rgba(30,98,146,0.30);
     --pm-shadow-card:    0 10px 30px -10px rgba(0,0,0,0.20), 0 4px 12px -4px rgba(0,0,0,0.10);
 
     --pm-header-bg:      rgba(15,23,42,0.85);
@@ -75,9 +75,9 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     background: var(--pm-bg) !important;
     background-image:
-        radial-gradient(at 0% 0%, rgba(99,102,241,0.06) 0px, transparent 55%),
-        radial-gradient(at 100% 0%, rgba(236,72,153,0.05) 0px, transparent 55%),
-        radial-gradient(at 50% 100%, rgba(139,92,246,0.05) 0px, transparent 55%) !important;
+        radial-gradient(at 0% 0%, rgba(30,98,146,0.06) 0px, transparent 55%),
+        radial-gradient(at 100% 0%, rgba(14,165,233,0.05) 0px, transparent 55%),
+        radial-gradient(at 50% 100%, rgba(2,132,199,0.05) 0px, transparent 55%) !important;
     color: var(--pm-text) !important;
     line-height: 1.7;
     min-height: 100vh;
@@ -86,9 +86,9 @@ body {
 
 [data-theme="dark"] body {
     background-image:
-        radial-gradient(at 0% 0%, rgba(99,102,241,0.10) 0px, transparent 55%),
-        radial-gradient(at 100% 0%, rgba(236,72,153,0.08) 0px, transparent 55%),
-        radial-gradient(at 50% 100%, rgba(139,92,246,0.08) 0px, transparent 55%) !important;
+        radial-gradient(at 0% 0%, rgba(30,98,146,0.10) 0px, transparent 55%),
+        radial-gradient(at 100% 0%, rgba(14,165,233,0.08) 0px, transparent 55%),
+        radial-gradient(at 50% 100%, rgba(2,132,199,0.08) 0px, transparent 55%) !important;
 }
 
 /* ============ 4. TYPOGRAPHY ============ */
@@ -122,7 +122,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
     z-index: 9999;
     transition: width 0.1s linear;
     border-radius: 0 2px 2px 0;
-    box-shadow: 0 0 10px rgba(99,102,241,0.4);
+    box-shadow: 0 0 10px rgba(30,98,146,0.4);
 }
 
 /* ============ 6. HEADER / NAVIGATION BAR ============ */
@@ -131,7 +131,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
     border-bottom: 1px solid var(--pm-border) !important;
-    box-shadow: 0 1px 12px rgba(99,102,241,0.08) !important;
+    box-shadow: 0 1px 12px rgba(30,98,146,0.08) !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 1000 !important;
@@ -207,7 +207,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
 }
 
 .premium_nav_primary ul > li > a:hover {
-    background: rgba(99,102,241,0.08) !important;
+    background: rgba(30,98,146,0.08) !important;
     color: var(--pm-primary) !important;
     transform: translateY(-1px) !important;
 }
@@ -241,7 +241,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
 .pm_dark_toggle:hover {
     border-color: var(--pm-primary);
     transform: rotate(15deg) scale(1.05);
-    box-shadow: 0 0 16px rgba(99,102,241,0.2);
+    box-shadow: 0 0 16px rgba(30,98,146,0.2);
 }
 
 .pm_icon_sun, .pm_icon_moon {
@@ -281,13 +281,13 @@ a:hover { color: var(--pm-primary-dark) !important; }
 .premium_nav_user .btn_dashboard {
     background: var(--pm-primary) !important;
     color: #fff !important;
-    box-shadow: 0 4px 12px rgba(99,102,241,0.25) !important;
+    box-shadow: 0 4px 12px rgba(30,98,146,0.25) !important;
 }
 
 .premium_nav_user .btn_login:hover,
 .premium_nav_user .btn_dashboard:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(99,102,241,0.35) !important;
+    box-shadow: 0 6px 20px rgba(30,98,146,0.35) !important;
     background: var(--pm-primary-dark) !important;
     color: #fff !important;
 }
@@ -302,7 +302,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
 
 .premium_nav_user .btn_logout:hover,
 .premium_nav_user .btn_register:hover {
-    background: rgba(99,102,241,0.06) !important;
+    background: rgba(30,98,146,0.06) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -321,8 +321,8 @@ a:hover { color: var(--pm-primary-dark) !important; }
 /* ============ 7. HERO SECTION ============ */
 .pm_hero {
     background:
-        radial-gradient(circle at top right, rgba(99,102,241,0.12), transparent 60%),
-        radial-gradient(circle at bottom left, rgba(236,72,153,0.08), transparent 60%),
+        radial-gradient(circle at top right, rgba(30,98,146,0.12), transparent 60%),
+        radial-gradient(circle at bottom left, rgba(14,165,233,0.08), transparent 60%),
         linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
     border-radius: var(--pm-radius-xl);
     padding: 5rem 3.5rem;
@@ -339,7 +339,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: conic-gradient(from 180deg at 50% 50%, #6366f1 0deg, #ec4899 120deg, #8b5cf6 240deg, #6366f1 360deg);
+    background: conic-gradient(from 180deg at 50% 50%, #1e6292 0deg, #0ea5e9 120deg, #0284c7 240deg, #1e6292 360deg);
     opacity: 0.05;
     animation: pmRotate 25s linear infinite;
 }
@@ -373,7 +373,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
 
 .pm_hero_badge {
     display: inline-block;
-    background: rgba(99,102,241,0.15);
+    background: rgba(30,98,146,0.15);
     color: #a5b4fc;
     padding: 0.4rem 1.2rem;
     border-radius: 20px;
@@ -382,7 +382,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(99,102,241,0.2);
+    border: 1px solid rgba(30,98,146,0.2);
 }
 
 .pm_hero_cta {
@@ -393,7 +393,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #1e6292 0%, #15476a 100%);
     color: #ffffff !important;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
@@ -409,7 +409,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
 .pm_btn_hero_submit:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.6);
-    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    background: linear-gradient(135deg, #15476a 0%, #4338ca 100%);
 }
 
 .pm_btn_hero_submit svg {
@@ -501,7 +501,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at top right, rgba(99,102,241,0.04), transparent 70%);
+    background: radial-gradient(circle at top right, rgba(30,98,146,0.04), transparent 70%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -511,7 +511,7 @@ a:hover { color: var(--pm-primary-dark) !important; }
 .obj_issue_summary:hover {
     transform: translateY(-6px) scale(1.005) !important;
     box-shadow: var(--pm-shadow-hover) !important;
-    border-color: rgba(99,102,241,0.25) !important;
+    border-color: rgba(30,98,146,0.25) !important;
 }
 
 .obj_article_summary:hover::after { opacity: 1; }
@@ -574,7 +574,7 @@ a.cmp_download_link {
 .galleys_links li a:hover,
 a.cmp_download_link:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(99,102,241,0.40) !important;
+    box-shadow: 0 6px 20px rgba(30,98,146,0.40) !important;
     color: #fff !important;
 }
 
@@ -692,7 +692,7 @@ input[type="submit"] {
 button[type="submit"]:hover,
 input[type="submit"]:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 20px rgba(99,102,241,0.40) !important;
+    box-shadow: 0 6px 20px rgba(30,98,146,0.40) !important;
     filter: brightness(1.05) !important;
     color: #fff !important;
 }
@@ -717,7 +717,7 @@ select {
 
 input:focus, textarea:focus, select:focus {
     border-color: var(--pm-primary) !important;
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+    box-shadow: 0 0 0 3px rgba(30,98,146,0.12) !important;
     outline: none !important;
 }
 
@@ -852,13 +852,13 @@ input:focus, textarea:focus, select:focus {
     font-size: 1.5rem;
     color: #fff;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+    box-shadow: 0 4px 16px rgba(30,98,146,0.3);
     transition: var(--pm-transition-bounce);
 }
 
 .pm_step:hover .pm_step_icon {
     transform: scale(1.15);
-    box-shadow: 0 6px 24px rgba(99,102,241,0.4);
+    box-shadow: 0 6px 24px rgba(30,98,146,0.4);
 }
 
 .pm_step_title {
@@ -1090,7 +1090,7 @@ input:focus, textarea:focus, select:focus {
     color: var(--pm-muted) !important;
     margin-bottom: 1.5rem !important;
     padding: 0.6rem 1rem !important;
-    background: rgba(99,102,241,0.04) !important;
+    background: rgba(30,98,146,0.04) !important;
     border-radius: var(--pm-radius-sm) !important;
 }
 
@@ -1243,8 +1243,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 @keyframes pmGlow {
-    0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.2); }
-    50%      { box-shadow: 0 0 30px rgba(99,102,241,0.4), 0 0 60px rgba(139,92,246,0.15); }
+    0%, 100% { box-shadow: 0 0 20px rgba(30,98,146,0.2); }
+    50%      { box-shadow: 0 0 30px rgba(30,98,146,0.4), 0 0 60px rgba(2,132,199,0.15); }
 }
 
 @keyframes pmCountUp {
@@ -1386,7 +1386,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .pm_btn_submit_new:hover {
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    background: linear-gradient(135deg, #1e6292 0%, #15476a 100%);
     transform: translateY(-4px);
     box-shadow: 0 12px 30px -5px rgba(99, 102, 241, 0.3);
 }
@@ -1397,7 +1397,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .pm_btn_view_existing:hover {
-    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+    background: linear-gradient(135deg, #0ea5e9 0%, #db2777 100%);
     border-color: transparent !important;
     transform: translateY(-4px);
     box-shadow: 0 12px 30px -5px rgba(236, 72, 153, 0.3);
