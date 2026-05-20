@@ -49,6 +49,7 @@
 				<nav class="premium_nav_primary" aria-label="Primary Navigation">
 					<ul>
 						<li><a href="{url page="index"}">{translate key="navigation.home"}</a></li>
+						<li><a href="{url page="about" op="submissions"}">Kirim Naskah</a></li>
 						<li><a href="{url page="issue" op="archive"}">{translate key="navigation.archives"}</a></li>
 						<li><a href="{url page="about"}">{translate key="navigation.about"}</a></li>
 						{if $currentContext && $requestedPage !== 'search'}
