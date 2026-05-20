@@ -1,0 +1,605 @@
+/* ============================================================
+   PREMIUM CSS - OJS Jurnal Paradaya
+   Injected on top of default OJS theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
+
+/* ---- DESIGN TOKENS ---- */
+:root {
+    --pm-primary:        #6366f1;
+    --pm-primary-dark:   #4f46e5;
+    --pm-secondary:      #ec4899;
+    --pm-accent:         #8b5cf6;
+    --pm-bg:             #f8fafc;
+    --pm-card:           rgba(255,255,255,0.85);
+    --pm-border:         rgba(99,102,241,0.12);
+    --pm-text:           #1e293b;
+    --pm-muted:          #64748b;
+    --pm-radius:         14px;
+    --pm-shadow:         0 4px 24px -2px rgba(99,102,241,0.10);
+    --pm-shadow-hover:   0 8px 32px -4px rgba(99,102,241,0.20);
+}
+
+/* ---- GLOBAL ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    background: var(--pm-bg) !important;
+    background-image:
+        radial-gradient(at 0% 0%,   rgba(99,102,241,0.06) 0px, transparent 55%),
+        radial-gradient(at 100% 0%, rgba(236,72,153,0.05)  0px, transparent 55%),
+        radial-gradient(at 50% 100%,rgba(139,92,246,0.05)  0px, transparent 55%) !important;
+    color: var(--pm-text) !important;
+}
+
+/* ---- HEADER ---- */
+.premium_header_bar {
+    background: rgba(255,255,255,0.80) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid var(--pm-border) !important;
+    box-shadow: 0 1px 12px rgba(99,102,241,0.08) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+}
+
+.premium_header_container {
+    display: flex !important;
+    flex-direction: row !important; /* Force horizontal */
+    align-items: center !important; /* Center vertically */
+    justify-content: space-between !important;
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    height: 80px !important; /* Fixed height for consistency */
+}
+
+.premium_site_branding {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.pkp_navigation_primary_row,
+.pkp_navigation_primary_wrapper {
+    background: transparent !important; /* Force remove blue */
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Site name / journal title in header */
+.premium_logo_text {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 1.4rem !important;
+    color: var(--pm-primary) !important;
+    text-decoration: none !important;
+    letter-spacing: -0.3px !important;
+    white-space: nowrap !important;
+}
+
+/* ---- NAVIGATION (theme + OJS menus) ---- */
+.premium_nav_primary .pkp_navigation_primary,
+.premium_nav_user .pkp_navigation_user,
+.premium_nav_primary ul,
+.premium_nav_user ul {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 12px !important;
+    align-items: center !important;
+}
+
+.premium_nav_primary ul > li > a {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    color: var(--pm-text) !important;
+    padding: 0.6rem 1rem !important;
+    border-radius: 10px !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    display: block !important;
+    white-space: nowrap !important;
+}
+
+.premium_nav_primary ul > li > a:hover {
+    background: rgba(99,102,241,0.08) !important;
+    color: var(--pm-primary) !important;
+    transform: translateY(-1px) !important;
+}
+
+.premium_nav_user ul > li > a {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1.2rem !important;
+    background: var(--pm-primary) !important;
+    color: #fff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 12px rgba(99,102,241,0.2) !important;
+    text-decoration: none !important;
+    display: block !important;
+    transition: all 0.25s ease !important;
+}
+
+.premium_nav_user ul > li > a:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(99,102,241,0.3) !important;
+    background: var(--pm-primary-dark) !important;
+}
+
+/* Logout / Second button */
+.premium_nav_user ul > li > a.btn_logout,
+.premium_nav_user ul > li > a.btn_register {
+    background: transparent !important;
+    color: var(--pm-primary) !important;
+    border: 1.5px solid var(--pm-primary) !important;
+    box-shadow: none !important;
+}
+
+.premium_nav_user ul > li > a.btn_logout:hover,
+.premium_nav_user ul > li > a.btn_register:hover {
+    background: rgba(99,102,241,0.05) !important;
+}
+
+.pkp_navigation_primary_wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+}
+
+.pkp_navigation_search_wrapper .pkp_search {
+    color: var(--pm-muted) !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+/* ---- MAIN CONTENT AREA ---- */
+.pkp_structure_main {
+    padding: 2rem 0 !important;
+}
+
+/* ---- ARTICLE / ISSUE CARDS ---- */
+.obj_article_summary,
+.obj_issue_summary,
+.pkp_block .listWithDividers > li {
+    background: var(--pm-card) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid var(--pm-border) !important;
+    border-radius: 20px !important; /* Rounder corners */
+    padding: 2.5rem !important; /* More breathing room */
+    margin-bottom: 2.5rem !important;
+    box-shadow: 
+        0 10px 30px -10px rgba(99,102,241,0.08),
+        0 4px 12px -4px rgba(99,102,241,0.03) !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.obj_article_summary:hover,
+.obj_issue_summary:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    box-shadow: 
+        0 20px 40px -15px rgba(99,102,241,0.15),
+        0 8px 20px -6px rgba(99,102,241,0.05) !important;
+    border-color: rgba(99,102,241,0.3) !important;
+}
+
+/* Add a subtle glow on hover */
+.obj_article_summary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(99,102,241,0.05), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.obj_article_summary:hover::after {
+    opacity: 1;
+}
+
+/* Article titles */
+.obj_article_summary .title a,
+.obj_article_summary h3 a,
+.obj_issue_summary .title a {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+    color: var(--pm-text) !important;
+    text-decoration: none !important;
+    transition: color 0.2s !important;
+}
+
+.obj_article_summary .title a:hover,
+.obj_issue_summary .title a:hover {
+    color: var(--pm-primary) !important;
+}
+
+/* ---- HEADINGS ---- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    color: var(--pm-text) !important;
+}
+
+h1 { font-size: 2rem !important; }
+h2 { font-size: 1.5rem !important; }
+h3 { font-size: 1.2rem !important; }
+
+/* ---- SIDEBAR BLOCKS ---- */
+.pkp_block {
+    background: var(--pm-card) !important;
+    border: 1px solid var(--pm-border) !important;
+    border-radius: var(--pm-radius) !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: var(--pm-shadow) !important;
+}
+
+.pkp_block h2,
+.pkp_block .title {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    color: var(--pm-primary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    margin-bottom: 1rem !important;
+    border-bottom: 2px solid var(--pm-border) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* ---- BUTTONS ---- */
+.pkp_button,
+.btn,
+button[type="submit"],
+input[type="submit"],
+a.cmp_download_link {
+    background: linear-gradient(135deg, var(--pm-primary), var(--pm-accent)) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    padding: 0.6rem 1.4rem !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 14px rgba(99,102,241,0.3) !important;
+}
+
+.pkp_button:hover,
+.btn:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(99,102,241,0.40) !important;
+    filter: brightness(1.05) !important;
+    color: #fff !important;
+}
+
+/* ---- FORMS ---- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+    border: 1.5px solid var(--pm-border) !important;
+    border-radius: 10px !important;
+    padding: 0.6rem 0.9rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9rem !important;
+    background: rgba(255,255,255,0.9) !important;
+    color: var(--pm-text) !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--pm-primary) !important;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15) !important;
+    outline: none !important;
+}
+
+/* ---- PAGE HEADER (Hero Section) ---- */
+.page_index .page_header,
+.pkp_page_index .page_header {
+    background: 
+        radial-gradient(circle at top right, rgba(99,102,241,0.1), transparent),
+        linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-radius: 30px !important;
+    padding: 6rem 4rem !important; /* Expansive padding */
+    margin-bottom: 4rem !important;
+    color: #fff !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.3) !important;
+}
+
+.page_index .page_header::before,
+.pkp_page_index .page_header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: conic-gradient(from 180deg at 50% 50%, #6366f1 0deg, #ec4899 120deg, #8b5cf6 240deg, #6366f1 360deg);
+    opacity: 0.05;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.page_index .page_header h1,
+.pkp_page_index .page_header h1 {
+    color: #fff !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 3.5rem !important; /* Bold, large title */
+    letter-spacing: -1.5px !important;
+    margin-bottom: 1rem !important;
+    background: linear-gradient(to bottom, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page_index .page_header::after,
+.pkp_page_index .page_header::after {
+    content: 'Jurnal Ilmiah Digital — Terbitkan Penelitian Anda';
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #94a3b8;
+    margin-top: 1rem;
+}
+
+/* ---- LINKS ---- */
+a {
+    color: var(--pm-primary) !important;
+    transition: color 0.2s !important;
+}
+
+a:hover {
+    color: var(--pm-primary-dark) !important;
+}
+
+/* ---- FOOTER ---- */
+.pkp_structure_footer_wrapper,
+footer.pkp_structure_footer_wrapper {
+    background: #0f172a !important;
+    color: #94a3b8 !important;
+    padding: 3.5rem 0 !important;
+    margin-top: 4rem !important;
+}
+
+.pkp_structure_footer_wrapper a {
+    color: #94a3b8 !important;
+    transition: color 0.2s !important;
+}
+
+.pkp_structure_footer_wrapper a:hover {
+    color: #e2e8f0 !important;
+}
+
+/* ---- BREADCRUMB ---- */
+.pkp_breadcrumbs {
+    font-size: 0.85rem !important;
+    color: var(--pm-muted) !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0.5rem 1rem !important;
+    background: rgba(99,102,241,0.05) !important;
+    border-radius: 8px !important;
+}
+
+/* ---- NOTIFICATION / ALERTS ---- */
+.pkp_notification,
+.notifySuccess,
+.notifyError,
+.notifyWarning {
+    border-radius: 10px !important;
+    padding: 0.9rem 1.2rem !important;
+    margin-bottom: 1rem !important;
+    border: none !important;
+}
+
+/* ---- CONTAINER WIDTH & SPACING ---- */
+.pkp_structure_content {
+    max-width: 1400px !important; /* Slightly wider for modern feel */
+    margin: 0 auto !important;
+    padding: 0 4rem !important; /* Wide side padding for 'negative space' */
+}
+
+.pkp_structure_main {
+    padding: 4rem 0 !important; /* More vertical breathing room */
+}
+
+/* ---- ANIMATION ---- */
+@keyframes pmFadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0);     }
+}
+
+.obj_article_summary,
+.obj_issue_summary,
+.pkp_block {
+    animation: pmFadeUp 0.5s ease-out both;
+}
+
+/* ---- MODAL POP-UP (Login/Register) ---- */
+.is_in_iframe .premium_header_bar,
+.is_in_iframe .pkp_structure_footer_wrapper,
+.is_in_iframe .pkp_breadcrumbs {
+    display: none !important;
+}
+
+.is_in_iframe .pkp_structure_main {
+    padding: 1.5rem !important;
+    margin-top: 0 !important;
+}
+
+/* Hide redundant headers inside the form in pop-up mode */
+.is_in_iframe .pkp_form h2,
+.is_in_iframe .pkp_form h3,
+.is_in_iframe .pkp_form legend {
+    display: none !important;
+}
+
+.is_in_iframe .pkp_structure_content {
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+
+.is_in_iframe body {
+    background: #fff !important; /* Clean white for the card interior */
+}
+
+.pm_modal_overlay[hidden] {
+    display: none !important;
+}
+
+.pm_modal_overlay {
+    position: fixed !important;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    z-index: 9999 !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease !important;
+}
+
+.pm_modal_overlay.active {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+.pm_modal_container {
+    width: 90%;
+    max-width: 500px;
+    height: 85vh;
+    background: #fff !important;
+    border-radius: 24px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.pm_modal_tabs {
+    display: flex !important;
+    background: #f1f5f9 !important;
+    padding: 6px !important;
+    margin: 15px 60px 10px 20px !important;
+    border-radius: 14px !important;
+    gap: 4px !important;
+}
+
+.pm_modal_tab {
+    flex: 1 !important;
+    text-align: center !important;
+    padding: 10px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    color: #64748b !important;
+    cursor: pointer !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+.pm_modal_tab:hover {
+    color: var(--pm-primary) !important;
+}
+
+.pm_modal_tab.active {
+    background: #fff !important;
+    color: var(--pm-primary) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+}
+
+.pm_modal_overlay.active .pm_modal_container {
+    transform: scale(1) translateY(0);
+}
+
+.pm_modal_close {
+    position: absolute !important;
+    top: 15px; right: 15px;
+    width: 32px; height: 32px;
+    background: rgba(0,0,0,0.05) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: background 0.2s !important;
+}
+
+.pm_modal_close:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+}
+
+.pm_modal_iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
+
+/* ---- OJS 3.6 WORKFLOW / DASHBOARD (light touch) ---- */
+.pkpWorkflow .pkpWorkflow__header,
+.pkpPageContent .pkpHeader {
+    border-radius: var(--pm-radius) !important;
+}
+
+.pkpWorkflow__stagePanel,
+.pkpPageContent .pkp_content_panel {
+    border-radius: var(--pm-radius) !important;
+    box-shadow: var(--pm-shadow) !important;
+}
+
+/* Login/register links open modal when theme adds class via manager menu URLs */
+.pkp_navigation_user a[href*="login"]:not(.btn_logout),
+.pkp_navigation_user a[href*="register"] {
+    cursor: pointer;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    h1 { font-size: 1.6rem !important; }
+    .pkp_structure_content { padding: 0 1rem !important; }
+    .obj_article_summary, .pkp_block { padding: 1.2rem !important; }
+    .pm_modal_container { height: 90vh; width: 95%; }
+}
