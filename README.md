@@ -61,14 +61,14 @@ Login admin: gunakan akun yang dibuat saat instalasi.
 
 Berikut adalah daftar akun default yang dapat digunakan untuk menguji fungsionalitas OJS sesuai masing-masing peran (roles). Semua akun menggunakan password: **`Pradaya2026!`**
 
-| Peran (Role) | Username | Email | Deskripsi Akses |
-|---|---|---|---|
-| **Site Administrator** | `im_anhars` | *ditentukan saat install* | Akses penuh seluruh instalasi sistem OJS |
-| **Journal Manager** | `manager_pradaya` | `manager@pradaya.com` | Pengaturan tampilan & operasional jurnal |
-| **Section Editor** | `editor_pradaya` | `editor@pradaya.com` | Pengelolaan naskah & penugasan reviewer |
-| **Reviewer** | `reviewer_pradaya` | `reviewer@pradaya.com` | Penilaian kelayakan naskah (Mitra Bestari) |
-| **Author** | `author_pradaya` | `author@pradaya.com` | Pengiriman naskah baru & revisi penulis |
-| **Reader** | `reader_pradaya` | `reader@pradaya.com` | Pembaca umum & langganan notifikasi |
+| Peran (Role) | Username | Password | Email | Deskripsi Akses |
+|---|---|---|---|---|
+| **Site Administrator** | `im_anhars` | `Pradaya2026!` | *ditentukan saat install* | Akses penuh seluruh instalasi sistem OJS |
+| **Journal Manager** | `manager_pradaya` | `Pradaya2026!` | `manager@pradaya.com` | Pengaturan tampilan & operasional jurnal |
+| **Section Editor** | `editor_pradaya` | `Pradaya2026!` | `editor@pradaya.com` | Pengelolaan naskah & penugasan reviewer |
+| **Reviewer** | `reviewer_pradaya` | `Pradaya2026!` | `reviewer@pradaya.com` | Penilaian kelayakan naskah (Mitra Bestari) |
+| **Author** | `author_pradaya` | `Pradaya2026!` | `author@pradaya.com` | Pengiriman naskah baru & revisi penulis |
+| **Reader** | `reader_pradaya` | `Pradaya2026!` | `reader@pradaya.com` | Pembaca umum & langganan notifikasi |
 
 > [!WARNING]
 > Demi keamanan, harap segera mengubah password akun-akun ini ketika dideploy di server produksi / hosting online.
