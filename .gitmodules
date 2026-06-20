@@ -29,7 +29,7 @@
 	path = lib/ui-library
 	url = https://github.com/pkp/ui-library
 [submodule "plugins/generic/citationStyleLanguage"]
-	path = plugins/generic/citationStyleLanguage
+	path = plugins/generic.disabled/citationStyleLanguage
 	url = https://github.com/pkp/citationStyleLanguage.git
 [submodule "plugins/reports/counter/classes/COUNTER"]
 	path = plugins/reports/counter/classes/COUNTER
